@@ -1,6 +1,5 @@
 package com.example.bohdan.converterlab;
 
-import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,11 +9,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Bohdan on 13.09.2015.
- */
+
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BankViewHolder>  {
-    Context mContext;
+
     ArrayList<Banks> banks;
 
     public RVAdapter( ArrayList<Banks> banks){
