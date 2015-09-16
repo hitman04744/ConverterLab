@@ -8,11 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
+import com.example.bohdan.converterlab.asyncTask.RequestTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Banks> banks = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,37 +23,17 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
         rv.setLayoutManager(layoutmanager);
         rv.setItemAnimator(new DefaultItemAnimator());
-        banks = initBanks();
-
-        RVAdapter adapter = new RVAdapter(banks);
-        rv.setAdapter(adapter);
 
 
-
-    }
-
-   public  ArrayList<Banks> initBanks(){
-       ArrayList<Banks> bankss = new ArrayList<>();
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
-        bankss.add(new Banks("Альфа-Банк", "Закарпатская область","Ужгород","lol","LOL"));
+//        RVAdapter adapter = new RVAdapter(banks);
+//        rv.setAdapter(adapter);
+        new RequestTask(this,rv).execute();
 
 
-        return bankss;
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
