@@ -1,4 +1,4 @@
-package com.example.bohdan.converterlab;
+package com.example.bohdan.converterlab.adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -7,15 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.bohdan.converterlab.organisationsModel.Organisations;
+import com.example.bohdan.converterlab.R;
+
 import java.util.ArrayList;
 
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BankViewHolder>  {
 
-    ArrayList<Banks> banks;
+    ArrayList<Organisations> mOrganisations;
 
-    public RVAdapter( ArrayList<Banks> banks){
-       this.banks = banks;
+    public RVAdapter( ArrayList<Organisations> banks){
+       this.mOrganisations = banks;
     }
 
     @Override
@@ -28,18 +31,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BankViewHolder>  {
 
     @Override
     public void onBindViewHolder(BankViewHolder holder, int position) {
-        holder.name.setText(banks.get(position).getName());
-        holder.location.setText(banks.get(position).getLocation());
-        holder.cityLocation.setText(banks.get(position).getCityLocation());
-        holder.telephone.setText(banks.get(position).getTelephone());
-        holder.bankAdress.setText(banks.get(position).getAdress());
+        holder.name.setText( mOrganisations.get(position).getTitle());
+        holder.location.setText( mOrganisations.get(position).getRegionId());
+        holder.cityLocation.setText( mOrganisations.get(position).getCityId());
+        holder.telephone.setText( mOrganisations.get(position).getPhone());
+        holder.bankAdress.setText( mOrganisations.get(position).getAddress());
 
     }
 
     @Override
     public int getItemCount() {
 
-        return banks.size();
+        return  mOrganisations.size();
     }
 
     @Override
