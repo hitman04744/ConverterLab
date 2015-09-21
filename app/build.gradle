@@ -27,5 +27,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.0.1+'
     compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
+    compile 'com.shamanland:fab:0.0.3'
 
 }
